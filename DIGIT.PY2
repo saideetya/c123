@@ -1,0 +1,16 @@
+#Uploading the csv
+from google.colab import files
+data_to_load = files.upload()
+
+import pandas as pd
+import plotly.express as px
+
+df = pd.read_csv("data.csv")
+
+
+print(df.head())
+
+fig = px.scatter(df, x="Size", y="Light")
+fig.show()
+
+
